@@ -17,7 +17,7 @@ static const int smartgaps          = 1;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "SauceCodePro Nerd Font Mono:size=12:type=Regular","WenQuanYi Micro Hei:size=12:type=Regular","Symbols Nerd Font:pixelsize=18:type=2048-em" };
+static const char *fonts[]          = { "FiraCode Nerd Font:size=13:type=Regular","WenQuanYi Micro Hei:size=13:type=Regular","Symbols Nerd Font:pixelsize=18:type=2048-em" };
 static const char dmenufont[]       = "SauceCodePro Nerd Font Mono:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -121,9 +121,9 @@ static Key keys[] = {
 	{ MODKEY,              XK_w,                    spawn,          {.v = wpcmd } },
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,    XK_l,                    rotatestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = -1 } },
+	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_l,                    focusstack,     {.i = +1 } },
-	{ MODKEY,              XK_j,                    focusstack,     {.i = -1 } },
+	{ MODKEY,              XK_k,                    focusstack,     {.i = -1 } },
 	{ MODKEY,              XK_n,                    viewtoleft,     {0} },
 	{ MODKEY,              XK_i,                    viewtoright,    {0} },
 	{ MODKEY|ShiftMask,    XK_n,                    tagtoleft,      {0} },
@@ -132,14 +132,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_g,                    incnmaster,     {.i = -1 } },
 	{ MODKEY,              XK_g,                    setmfact,       {.f = -0.05} },
 	{ MODKEY,              XK_h,                    setmfact,       {.f = +0.05} },
-	{ MODKEY,              XK_k,                    hidewin,        {0} },
-	{ MODKEY|ShiftMask,    XK_k,                    restorewin,     {0} },
+	{ MODKEY,              XK_j,                    hidewin,        {0} },
+	{ MODKEY|ShiftMask,    XK_j,                    restorewin,     {0} },
 	{ MODKEY,              XK_o,                    hideotherwins,  {0}},
 	{ MODKEY|ShiftMask,    XK_o,                    restoreotherwins, {0}},
 	{ MODKEY|ShiftMask,    XK_Return,               zoom,           {0} },
 	{ MODKEY,              XK_Tab,                  view,           {0} },
 	{ MODKEY,              XK_x,                    killclient,     {0} },
 	{ MODKEY|ShiftMask,    XK_m,                    setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,              XK_c,                    setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,              XK_m,                    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,              XK_f,                    fullscreen,     {0} },
 	{ MODKEY,              XK_space,                setlayout,      {0} },
